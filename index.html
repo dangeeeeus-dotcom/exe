@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Birthday.exe</title>
+  <link rel="stylesheet" href="/project /style.css">
+</head>
+<body id="game-screen">
+  <h1>BIRTHDAY.EXE</h1>
+  <p id="status">Initializing birthday chaos...</p>
+  <div class="loading-box">
+    <div class="loading-bar"></div>
+  </div>
+  
+  <p id="percentage">0%</p>
+  <p id="system-message">PLEASE WAIT...</p>
+  <button id="fix-botton" class="fix-button-hidden">FIX THE SYSTEM</button>
+  
+  <div id="surprise-screen" class="hidden">
+    <h1>🎉SYSTEM HACKED🎉</h1>
+    <p>CONGRATULATIONS, YOU CAUGHT THE IDIOT.</p>
+    <p>Birthday surprise unlocked.</p>
+    
+    <button id="continue-button">WAIT... THERE'S MORE?</button>
+    
+    <div id="emotional-screen" class="hidden">
+      <h1>OKAY, JOKES ASIDE...</h1>
+      <p>You deserve more than just memes and stupid errors.</p>
+      <p>
+        I hope this new age brings you happiness, peace, and people who truly care about you.
+      </p>
+      <p>Never forget that you matter. Always.</p>
+      
+      <div id="final-button-container" class="hidden">
+        <button id="final-button">ONE LAST THING...</button>
+      </div>
+      <div id="final-message" class="hidden">
+        <h2>A LITTLE WISH FOR YOU</h2>
+        <p>
+          No matter where life takes you, I hope you never forget how special you are.
+        </p>
+        <p>
+          May you find happiness in little things,
+          peace in difficult moments,
+          and love in places you least expect.
+        </p>
+        <p>Keep going, The future is waiting for you.</p>
+        
+        <button id="go-to-universe-button" class="hidden">
+          ENTER ANOTHER UNIVERSE ✨
+        </button>
+      </div>
+    </div>
+
+    
+    <div id="universe-screen" class="hidden">
+      <div class="universe-stars"></div>
+      
+      <div class="universe-content">
+        <p class="universe-intro">
+          Some things are better felt than explained.
+        </p>
+        
+        <button id="enter-universe-button">
+          ENTER ANOTHER UNIVERSE ✨
+        </button>
+      </div>
+    </div>
+</div>
+<div id="message-paper-screen" class="hidden">
+    <div class="message-paper">
+        <p class="letter-label">A LETTER FOR YOU ✦</p>
+
+        <h2>Dear You,</h2>
+
+        <p>
+            If you found your way here, maybe the universe
+            wanted you to read these words.
+        </p>
+
+        <p>
+            walk ur path slowly, learn to enjoy every
+            step along the way. give urself
+            time to grow, to heal, and to discover
+            what truly makes you happy. 
+            you don’t have to rush to achieve everything all at once.
+        </p>
+        
+        <p>
+            even the smallest steps still count as progress.
+            don’t spend all ur time worrying about
+            the destination that you forget to appreciate the journey itself.
+        </p>
+
+        <p>
+            along the way, there will be things
+            you have to let go of, things you never thought
+            you’d lose, and things you wish
+            you could hold on to a little longer.
+        </p>
+
+        <p>
+            but don’t let urself drown in the pain of what you’ve lost.
+            not everything you lose is meant to leave you empty.
+            sometimes, letting go is simply making room
+            for something greater to find its way into ur life.
+        </p>
+
+        <p>
+            knowing that you’ve had to go through so much pain
+            and carry so much painful memories from ur past.
+            im truly sorry that you had to experience those things.
+            i may never fully understand how much it hurts you,
+            but you never deserved to experience any of that shits.
+        </p>
+        
+        <p>
+            although you never deserved any of the pain you’ve been through,
+            those experiences shaped you into the person you are today.
+            those experiences have become part of ur story, part of you.
+            they don’t define ur worth, but they’ve
+            played a part in shaping ur strength, ur courage,
+            and the person you’ve grown into.
+        </p>
+        
+        <p>
+            dream higher, and chase them with all ur heart.
+            but don’t forget, the higher you dream,
+            the more you have to risk. great dreams demand courage,
+            sacrifice, and a heart strong enough to keep going
+            when everything feels uncertain.
+        </p>
+        
+        <p>
+            you may have to walk a path that not everyone will understand.
+            there will be days when the journey feels too heavy
+            and the dream feels too far away.
+            but, stay determined. never forget the reason u started.
+        </p>
+
+        <p>
+            and whenever you feel lost, i hope you remember
+            that even the stars need darkness to shine.
+        </p>
+
+        <p class="letter-ending">
+            Keep shining.<br />
+            The world is better with you in it. ✨
+        </p>
+
+        <p class="letter-signature">
+            — A little wish sent your way
+        </p>
+        
+        <button id="back-to-universe-button">
+            BACK TO THE STARS ✨
+        </button>
+    </div>
+</div>
+  
+<div id="secret-screen" class="hidden">
+    <div class="secret-stars"></div>
+
+    <div class="secret-content">
+        <p class="secret-label">ONE LAST LITTLE SECRET ✦</p>
+
+        <button id="secret-star-button" aria-label="Reveal the secret message">
+            ✦
+        </button>
+
+        <p class="secret-hint">There's one more thing I want you to know...</p>
+
+        <div id="secret-message" class="hidden">
+            <h2>Destination.</h2>
+
+            <p>
+                don't be afraid of how much it takes to get there.
+                be afraid of giving up on the life
+                you've always dreamed of living.
+            </p>
+
+            <p class="secret-signature">
+                someone
+            </p>
+        </div>
+
+        <button id="secret-return-button" class="hidden">
+            BACK TO OUR LITTLE UNIVERSE ✨
+        </button>
+    </div>
+</div>
+
+<div id="ending-screen" class="hidden">
+    <div class="ending-content">
+        <p class="ending-label">UNTIL OUR STARS MEET AGAIN ✦</p>
+
+        <h2 class="ending-title">
+            And that's the end of this little universe...
+        </h2>
+
+        <p class="ending-message">
+            growing up means learning that not every step
+            forward comes without a sacrifice,
+            but never let the fear of losing something
+            keep you from becoming someone greater.
+        </p>
+
+        <p class="ending-signature">
+            deruu 🦔
+        </p>
+
+        <button id="restart-universe-button">
+            VISIT THIS UNIVERSE AGAIN ✨
+        </button>
+    </div>
+</div>
+  
+  <audio id="lofi-music" loop>
+    <source src="lofi.mp3" type="audio/mpeg">
+  </audio>
+  
+  <button id="music-button" class="hidden">PLAY LO-FI</button>
+  <script src="/project /script.js"></script>
+</body>
+</html>

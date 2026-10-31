@@ -1,0 +1,1418 @@
+body {
+  background-color: #ff3dcc;
+  color: #b6ff00;
+  font-family: monospace;
+  text-align: center;
+}
+h1 {
+  background-color: #6633ff;
+  padding: 20px;
+  border: 4px dashed #b6ff00;
+}
+p {
+  font-size: 20px;
+  font-weight: bold;
+}
+.loading-box {
+  width: 80%;
+  height: 30px;
+  border: 3px solid #b6ff00;
+  margin: 20px auto;
+  background-color: black;
+  
+}
+.loading-bar {
+  width: 0%;
+  height: 30px;
+  background-color: #b6ff00;
+  animation: fakeLoading 4s ease-out forwards;
+}
+@keyframes fakeLoading {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 99%;
+  }
+}
+.warning {
+  color: red;
+  font-size: 18px;
+  animation: shake 0.2s infinite;
+}
+button {
+  background-color: yellow;
+  color: black;
+  padding: 15px;
+  font-weight: bold;
+  font-size: 18px;
+}
+@keyframes shake {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-8px, 3px);
+  }
+  50% {
+    transform: translate(8px, -3px);
+  }
+  75% {
+    transform: translate(-5px, -2px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.shake {
+  animation: shake 0.3s;
+}
+
+.hidden{
+  display: none;
+}
+
+#emotional-screen {
+  animation: fadeIn 2s ease;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#music-button {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background-color: #6633ff;
+  color: #b6ff00;
+  border: 2px solid #b6ff00;
+  border-radius: 30px;
+  padding: 12px 18px;
+  font-family: monospace;
+  font-size: 14px;
+  z-index: 10000;
+}
+
+.emotional-mode {
+  background: linear-gradient(
+    135deg,
+    #1b1b3a,
+    #493267,
+    #b06ab3
+  );
+  color: #fff0f5;
+  transition: background 2s ease, color 2s ease;
+}
+
+.emotional-mode h1 {
+  background: transparent;
+  border: none;
+  color: #ffd6ff;
+}
+.emotional-mode p {
+  color: #fff0f5;
+}
+/* Hide emotional paragraphs until their turn*/
+#emotional-screen > p {
+  opacity: 0;
+}
+#emotional-screen > p.typing,
+#emotional-screen > p.typed {
+  opacity: 1;
+}
+
+/* MAGICAL UNIVERSE */
+#universe-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 50% 45%, #42206b 0%, #1a1038 45%, #070510 100%);
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+}
+
+#universe-screen:not(.hidden) {
+    display: flex;
+}
+
+.universe-stars {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(2px 2px at 20% 30%, white 50%, transparent 100%),
+        radial-gradient(2px 2px at 70% 20%, #d9b8ff 50%, transparent 100%),
+        radial-gradient(1px 1px at 40% 80%, white 50%, transparent 100%),
+        radial-gradient(2px 2px at 85% 65%, #d9b8ff 50%, transparent 100%),
+        radial-gradient(1px 1px at 15% 70%, white 50%, transparent 100%);
+    background-size: 240px 240px;
+    animation: starDrift 35s linear infinite;
+}
+
+.universe-content {
+    position: relative;
+    z-index: 1;
+    width: min(90%, 500px);
+    text-align: center;
+    animation: universeFadeIn 2s ease both;
+}
+
+.universe-intro {
+    color: #e6d5ff;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    text-shadow: 0 0 15px #c49aff;
+}
+
+#enter-universe-button {
+    padding: 15px 22px;
+    border: 1px solid #d7b5ff;
+    border-radius: 30px;
+    background: rgba(125, 72, 180, 0.22);
+    color: white;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(190, 130, 255, 0.3);
+    transition: 0.3s ease;
+}
+
+#enter-universe-button:hover {
+    background: rgba(160, 100, 230, 0.4);
+    box-shadow: 0 0 35px rgba(190, 130, 255, 0.7);
+    transform: scale(1.04);
+}
+
+@keyframes starDrift {
+    from { background-position: 0 0; }
+    to { background-position: 240px 240px; }
+}
+
+@keyframes universeFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#go-to-universe-button {
+    margin-top: 25px;
+    padding: 15px 22px;
+    border: 1px solid #d7b5ff;
+    border-radius: 30px;
+    background: rgba(125, 72, 180, 0.22);
+    color: white;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(190, 130, 255, 0.3);
+    transition: 0.3s ease;
+}
+
+#go-to-universe-button:hover {
+    background: rgba(160, 100, 230, 0.4);
+    box-shadow: 0 0 35px rgba(190, 130, 255, 0.7);
+    transform: scale(1.04);
+}
+
+#final-message h2,
+#final-message p,
+#final-message #go-to-universe-button {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+#final-message .reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+#final-message #go-to-universe-button {
+  opacity: 1;
+  visibility: visible;
+  color: white;
+  position: relative;
+  z-index: 10;
+}
+/* LETTER SCREEN */
+#message-paper-screen {
+    box-sizing: border-box;
+    min-height: 100vh;
+    width: 100%;
+    padding: 45px 18px 70px;
+    background:
+        radial-gradient(
+            ellipse at 50% 45%,
+            #42206b 0%,
+            #1a1038 45%,
+            #070510 100%
+        );
+    position: relative;
+    overflow: hidden;
+}
+
+#message-paper-screen:not(.hidden) {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    animation: universeFadeIn 2s ease both;
+}
+
+#message-paper-screen.hidden {
+    display: none !important;
+}
+
+#message-paper-screen::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(2px 2px at 15% 20%, white 50%, transparent 100%),
+        radial-gradient(2px 2px at 80% 15%, #e4c6ff 50%, transparent 100%),
+        radial-gradient(1px 1px at 30% 55%, white 50%, transparent 100%),
+        radial-gradient(2px 2px at 85% 70%, #d8b4ff 50%, transparent 100%);
+    background-size: 250px 250px;
+    animation: starDrift 35s linear infinite;
+}
+
+.message-paper {
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    width: min(100%, 580px);
+    padding: 40px clamp(23px, 7vw, 55px);
+    background: linear-gradient(160deg, #fff7e8, #f0dfc3 55%, #e8d2b0);
+    color: #49354b;
+    text-align: left;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 2;
+    border: 1px solid rgba(255, 239, 205, 0.8);
+    border-radius: 4px;
+    box-shadow: 0 0 35px rgba(184, 126, 255, 0.2);
+    transform: rotate(-0.4deg);
+}
+
+.message-paper::before {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    border: 1px solid rgba(151, 111, 88, 0.22);
+    pointer-events: none;
+}
+
+.message-paper .letter-label {
+    text-align: center;
+    font: 9px Arial, sans-serif;
+    letter-spacing: 3px;
+    color: #96779b;
+    margin-bottom: 30px;
+}
+
+.message-paper h2 {
+    color: #684479;
+    font-size: 29px;
+    font-weight: normal;
+}
+
+.message-paper p {
+    font-size: 15px;
+    margin-bottom: 27px;
+}
+
+.message-paper .letter-ending {
+    margin-top: 45px;
+    font-size: 17px;
+    color: #684479;
+    text-align: center;
+}
+
+.message-paper .letter-signature {
+    margin-top: 30px;
+    font-size: 12px;
+    font-style: italic;
+    color: #96779b;
+    text-align: right;
+}
+
+@media (max-width: 480px) {
+    #message-paper-screen {
+        padding: 30px 15px 50px;
+    }
+
+    .message-paper {
+        padding: 35px 25px;
+    }
+
+    .message-paper p {
+        font-size: 14px;
+    }
+}
+/* MAGICAL LETTER REVEAL */
+
+@keyframes letterAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(35px) rotate(-1.5deg) scale(0.96);
+        filter: blur(8px);
+    }
+
+    60% {
+        opacity: 1;
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotate(-0.4deg) scale(1);
+        filter: blur(0);
+    }
+}
+
+#message-paper-screen:not(.hidden) .message-paper {
+    animation: letterAppear 2s ease both;
+    animation-delay: 0.4s;
+    transform-origin: top center;
+    box-shadow:
+        0 0 25px rgba(190, 130, 255, 0.2),
+        0 0 60px rgba(150, 90, 220, 0.12),
+        0 15px 45px rgba(0, 0, 0, 0.35);
+}
+
+@keyframes letterTextReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(16px);
+        filter: blur(4px);
+    }
+
+    70% {
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+#message-paper-screen:not(.hidden) .message-paper > * {
+    animation: letterTextReveal 1.2s ease both;
+}
+
+#message-paper-screen:not(.hidden) .message-paper > *:nth-child(1) {
+    animation-delay: 1s;
+}
+
+#message-paper-screen:not(.hidden) .message-paper > *:nth-child(2) {
+    animation-delay: 1.5s;
+}
+
+#message-paper-screen:not(.hidden) .message-paper > *:nth-child(3) {
+    animation-delay: 2s;
+}
+
+#message-paper-screen:not(.hidden) .message-paper > *:nth-child(4) {
+    animation-delay: 2.5s;
+}
+
+#message-paper-screen:not(.hidden) .message-paper > *:nth-child(5) {
+    animation-delay: 3s;
+}
+
+#message-paper-screen:not(.hidden) .message-paper > *:nth-child(6) {
+    animation-delay: 3.5s;
+}
+
+#message-paper-screen:not(.hidden) .message-paper > *:nth-child(7) {
+    animation-delay: 4s;
+}
+
+#message-paper-screen:not(.hidden) .message-paper > *:nth-child(8) {
+    animation-delay: 4.5s;
+}
+
+#message-paper-screen:not(.hidden) .message-paper > *:nth-child(9) {
+    animation-delay: 5s;
+}
+/* FIX LETTER FONT COLORS */
+
+.message-paper {
+    color: #49334b !important;
+}
+
+.message-paper p {
+    color: #49334b !important;
+}
+
+.message-paper h2 {
+    color: #684479 !important;
+}
+
+.message-paper .letter-label {
+    color: #96779b !important;
+}
+
+.message-paper .letter-ending {
+    color: #684479 !important;
+}
+
+.message-paper .letter-signature {
+    color: #96779b !important;
+}
+/* TWINKLING GALAXY STARS */
+
+#message-paper-screen::after {
+    content: "✦";
+    position: absolute;
+    top: 8%;
+    left: 8%;
+    color: #ead5ff;
+    font-size: 22px;
+    text-shadow: 0 0 12px #c49aff;
+    pointer-events: none;
+    animation: starTwinkle 3s ease-in-out infinite;
+}
+
+@keyframes starTwinkle {
+    0%, 100% {
+        opacity: 0.25;
+        transform: scale(0.7) rotate(0deg);
+        text-shadow: 0 0 5px #c49aff;
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.3) rotate(45deg);
+        text-shadow:
+            0 0 10px #e6d5ff,
+            0 0 25px #b985ff,
+            0 0 40px #8e55ff;
+    }
+}
+
+/* EXTRA PURPLE GLOW AROUND THE LETTER */
+
+#message-paper-screen:not(.hidden) .message-paper {
+    box-shadow:
+        0 0 20px rgba(190, 130, 255, 0.18),
+        0 0 45px rgba(150, 90, 220, 0.2),
+        0 15px 45px rgba(0, 0, 0, 0.35);
+}
+/* COMFORTABLE LETTER READING */
+
+.message-paper {
+    line-height: 2.1;
+    letter-spacing: 0.15px;
+}
+
+.message-paper p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+    .message-paper {
+        line-height: 2;
+        padding: 32px 23px;
+    }
+
+    .message-paper p {
+        font-size: 14px;
+    }
+}
+/* Magical music button entrance */
+#music-button {
+    position: fixed;
+    bottom: 22px;
+    right: 20px;
+    z-index: 100;
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+        opacity 1.5s ease,
+        transform 1.5s ease,
+        background 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+#music-button.music-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* A soft magical glow around the letter */
+#message-paper-screen:not(.hidden) .message-paper {
+    box-shadow:
+        0 0 20px rgba(205, 160, 255, 0.18),
+        0 0 45px rgba(170, 110, 255, 0.15),
+        0 25px 70px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes letterGlow {
+    0%, 100% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.035);
+    }
+}
+
+#message-paper-screen:not(.hidden) .message-paper {
+    animation:
+        letterAppear 2s ease both,
+        letterGlow 5s ease-in-out 2.4s infinite;
+}
+/* Floating galaxy sparkles */
+#message-paper-screen::after {
+    content: "✦  ·  ✧  ·  ✦  ·  ✧  ·  ✦";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: rgba(235, 210, 255, 0.55);
+    font-size: 18px;
+    letter-spacing: 24px;
+    line-height: 110px;
+    text-align: center;
+    overflow: hidden;
+    pointer-events: none;
+    animation: floatingSparkles 12s ease-in-out infinite alternate;
+}
+
+@keyframes floatingSparkles {
+    0% {
+        transform: translateY(0);
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: translateY(-25px);
+        opacity: 0.8;
+    }
+}
+
+
+#message-paper-screen::after {
+    z-index: 0;
+}
+
+#message-paper-screen .message-paper {
+    z-index: 1;
+}
+
+/* Letter paragraphs reveal on scroll */
+#message-paper-screen .message-paper > p,
+#message-paper-screen .message-paper > h2 {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+#message-paper-screen .message-paper > .letter-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slow-moving galaxy ambience */
+#message-paper-screen {
+    isolation: isolate;
+}
+
+#message-paper-screen::before {
+    z-index: 0;
+    background-size: 250px 250px;
+    animation:
+        starDrift 35s linear infinite,
+        nebulaPulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes nebulaPulse {
+    0% {
+        filter: brightness(0.85);
+    }
+
+    100% {
+        filter: brightness(1.2);
+    }
+}
+
+#back-to-universe-button {
+    display: block;
+    margin: 35px auto 0;
+    padding: 12px 22px;
+    border: 1px solid #b69acb;
+    border-radius: 30px;
+    background: rgba(104, 68, 121, 0.12);
+    color: #684479;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+#back-to-universe-button:hover {
+    background: #684479;
+    color: #fff7e8;
+    box-shadow: 0 0 20px rgba(170, 110, 255, 0.35);
+    transform: translateY(-3px);
+}
+
+/* The final secret universe */
+#secret-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 30px 20px;
+    background:
+        radial-gradient(ellipse at 50% 40%,
+        #392054 0%, #160d2b 48%, #05040c 100%);
+    color: #fff5ff;
+}
+
+#secret-screen:not(.hidden) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: universeFadeIn 2s ease both;
+}
+
+#secret-screen.secret-fade-out {
+    animation: secretFadeOut 3s ease-in-out forwards !important;
+    pointer-events: none;
+    z-index: 20;
+}
+
+#secret-screen.hidden {
+    display: none !important;
+}
+
+.secret-content {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 520px);
+    text-align: center;
+    padding: 35px 15px;
+}
+
+.secret-label {
+    color: #d9b9ff;
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+#secret-star-button {
+    display: block;
+    margin: 35px auto;
+    width: 90px;
+    height: 90px;
+    border: 1px solid rgba(235, 210, 255, 0.6);
+    border-radius: 50%;
+    background: radial-gradient(circle, #f4dcff 0%, #a76ce0 25%, #3b2058 75%);
+    color: white;
+    font-size: 38px;
+    cursor: pointer;
+    box-shadow: 0 0 25px #a76ce066, 0 0 65px #a76ce033;
+    animation: secretStarPulse 3s ease-in-out infinite;
+    transition: transform 0.5s ease;
+}
+
+#secret-star-button:hover {
+    transform: scale(1.12);
+}
+
+@keyframes secretStarPulse {
+    0%, 100% {
+        box-shadow: 0 0 25px #a76ce066, 0 0 65px #a76ce033;
+    }
+
+    50% {
+        box-shadow: 0 0 40px #d8b0ff99, 0 0 90px #a76ce066;
+    }
+}
+
+.secret-hint {
+    color: #d8c5e8;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+#secret-message {
+    margin: 35px auto;
+    padding: 25px 20px;
+    border-top: 1px solid #a77bc966;
+    border-bottom: 1px solid #a77bc966;
+    animation: universeFadeIn 2s ease both;
+}
+
+#secret-message h2 {
+    color: #e7caff;
+    font-family: Georgia, serif;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+#secret-message p {
+    color: #fff0ff;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 2;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+#secret-message .secret-signature {
+    color: #d2b0ed;
+    font-style: italic;
+    font-size: 14px;
+    margin-top: 25px;
+}
+
+#secret-return-button {
+    margin: 20px auto;
+    padding: 12px 20px;
+    border: 1px solid #a77bc9;
+    border-radius: 30px;
+    background: transparent;
+    color: #f5e8ff;
+    font-family: Georgia, serif;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.4s ease;
+}
+
+#secret-return-button:hover {
+    background: #6b4388;
+}
+
+/* Secret message reveal */
+#secret-star-button {
+    transition:
+        opacity 1s ease,
+        transform 1s ease,
+        box-shadow 1s ease;
+}
+
+#secret-star-button.star-revealed {
+    opacity: 0;
+    transform: scale(2.2);
+    box-shadow: 0 0 100px #d8b0ff;
+    pointer-events: none;
+}
+
+#secret-message.secret-revealed {
+    animation: secretMessageReveal 2s ease both;
+}
+
+@keyframes secretMessageReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+        filter: blur(8px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* The final goodbye */
+#ending-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    box-sizing: border-box;
+    overflow-y: auto;
+    padding: 30px 22px;
+    background:
+        radial-gradient(ellipse at 50% 40%,
+        #3b2058 0%, #160d2b 50%, #05040c 100%);
+    color: #fff5ff;
+}
+
+#ending-screen:not(.hidden) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: universeFadeIn 3s ease both;
+}
+
+#ending-screen.hidden {
+    display: none !important;
+}
+
+.ending-content {
+    width: min(100%, 520px);
+    text-align: center;
+    padding: 30px 12px;
+    animation: endingTextAppear 3s ease both;
+}
+
+.ending-label {
+    color: #c9a7e8;
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 40px;
+}
+
+.ending-title {
+    color: #f0ddff;
+    font-family: Georgia, serif;
+    font-size: clamp(24px, 6vw, 36px);
+    line-height: 1.7;
+    font-weight: normal;
+}
+
+.ending-message {
+    color: #e5d3f2;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 2;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    margin-top: 28px;
+}
+
+.ending-signature {
+    color: #c9a7e8;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 14px;
+    margin-top: 28px;
+}
+
+#restart-universe-button {
+    margin-top: 35px;
+    padding: 13px 22px;
+    border: 1px solid #a77bc9;
+    border-radius: 30px;
+    background: transparent;
+    color: #f5e8ff;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+#restart-universe-button:hover {
+    background: #684479;
+    box-shadow: 0 0 25px #a76ce055;
+}
+
+@keyframes endingTextAppear {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* Cinematic screen transitions */
+.screen-fade-out {
+    animation: screenFadeOut 0.8s ease forwards;
+    pointer-events: none;
+}
+
+@keyframes screenFadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+/* Letter cinematic exit */
+.letter-fade-out {
+    animation: letterFadeOut 4s ease-in-out forwards !important;
+    pointer-events: none;
+    will-change: opacity, transform, filter;
+}
+
+@keyframes letterFadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+
+    70% {
+        opacity: 0.7;
+        transform: scale(0.98);
+        filter: blur(1px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.94);
+        filter: blur(4px);
+    }
+}
+
+/* Secret universe cinematic exit */
+.screen-fade-out {
+    animation: screenFadeOut 1.6s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+    pointer-events: none;
+    will-change: opacity, transform, filter;
+}
+
+@keyframes screenFadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+
+    40% {
+        opacity: 1;
+        transform: scale(1.015);
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.06);
+        filter: blur(8px);
+    }
+}
+
+/* Final goodbye: slow emotional reveal */
+.ending-label,
+.ending-title,
+.ending-message,
+.ending-signature,
+#restart-universe-button {
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+.ending-element-reveal {
+    animation: endingTextReveal 1.5s ease forwards;
+}
+
+@keyframes endingTextReveal {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Final button: magical hover */
+#restart-universe-button {
+    transition:
+        opacity 1.5s ease,
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        background 0.4s ease;
+}
+
+#restart-universe-button:hover {
+    transform: translateY(0) scale(1.06);
+    box-shadow:
+        0 0 15px rgba(190, 130, 255, 0.6),
+        0 0 35px rgba(150, 80, 255, 0.4);
+}
+
+/* Final ending cinematic exit */
+.ending-fade-out {
+    animation: endingFadeOut 2.5s ease-in-out forwards;
+    pointer-events: none;
+}
+
+@keyframes endingFadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.97);
+        filter: blur(4px);
+    }
+}
+
+#ending-screen.ending-fade-out {
+    animation: endingFadeOut 2.5s ease-in-out forwards !important;
+    pointer-events: none;
+    z-index: 30;
+}
+
+/* Gentle galaxy twinkle */
+@keyframes galaxyTwinkle {
+    0%, 100% {
+        opacity: 0.65;
+        filter: brightness(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        filter: brightness(1.5);
+    }
+}
+
+#universe-screen:not(.hidden) .universe-stars {
+    animation:
+        starDrift 35s linear infinite,
+        galaxyTwinkle 5s ease-in-out infinite;
+}
+
+/* Magical portal button */
+#enter-universe-button {
+    animation: portalGlow 3s ease-in-out infinite;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+@keyframes portalGlow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(190, 130, 255, 0.25);
+    }
+
+    50% {
+        box-shadow:
+            0 0 20px rgba(190, 130, 255, 0.65),
+            0 0 40px rgba(150, 80, 255, 0.35);
+    }
+}
+
+#enter-universe-button:hover {
+    transform: scale(1.05);
+}
+
+/* Portal activation when clicked */
+#enter-universe-button.portal-activating {
+    animation: portalActivate 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
+    pointer-events: none;
+    will-change: transform, filter, box-shadow, opacity;
+}
+
+@keyframes portalActivate {
+    0% {
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 0 10px rgba(190, 130, 255, 0.3);
+        opacity: 1;
+    }
+
+    45% {
+        transform: scale(0.96);
+        filter: brightness(1.5);
+        box-shadow:
+            0 0 25px rgba(210, 160, 255, 0.8),
+            0 0 50px rgba(150, 80, 255, 0.5);
+        opacity: 1;
+    }
+
+    75% {
+        transform: scale(1.04);
+        filter: brightness(2);
+        box-shadow:
+            0 0 40px rgba(220, 180, 255, 1),
+            0 0 80px rgba(150, 80, 255, 0.8);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.08);
+        filter: brightness(2.2);
+        box-shadow:
+            0 0 50px rgba(220, 180, 255, 1),
+            0 0 100px rgba(150, 80, 255, 1);
+        opacity: 0;
+    }
+}
+
+/* Magical letter reveal */
+#message-paper-screen.letter-appearing {
+    animation: magicalLetterReveal 2.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+    transform-origin: center center;
+    will-change: opacity, transform, filter;
+}
+
+@keyframes magicalLetterReveal {
+    0% {
+        opacity: 0;
+        transform: scale(0.88) translateY(18px);
+        filter: blur(12px) brightness(1.8);
+    }
+
+    35% {
+        opacity: 0.35;
+        filter: blur(7px) brightness(1.5);
+    }
+
+    70% {
+        opacity: 0.85;
+        transform: scale(1.015) translateY(0);
+        filter: blur(2px) brightness(1.15);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        filter: blur(0) brightness(1);
+    }
+}
+
+/* A letter floating in the galaxy */
+.message-paper {
+    animation: letterFloat 6s ease-in-out infinite;
+    will-change: transform;
+}
+
+@keyframes letterFloat {
+    0%, 100% {
+        transform: translateY(0);
+        box-shadow:
+            0 0 20px rgba(170, 110, 255, 0.12),
+            0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    50% {
+        transform: translateY(-7px);
+        box-shadow:
+            0 0 30px rgba(170, 110, 255, 0.25),
+            0 20px 45px rgba(0, 0, 0, 0.25);
+    }
+}
+
+/* Gentle floating letter fix */
+#message-paper-screen:not(.hidden) .message-paper {
+    animation: gentleLetterFloat 5s ease-in-out infinite !important;
+}
+
+@keyframes gentleLetterFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Magical purple aura around the letter */
+#message-paper-screen:not(.hidden) .message-paper {
+    position: relative;
+    isolation: isolate;
+}
+
+#message-paper-screen:not(.hidden) .message-paper::before {
+    content: "";
+    position: absolute;
+    inset: -15px;
+    z-index: 0;
+    border-radius: inherit;
+    background: rgba(170, 90, 255, 0.3);
+    box-shadow:
+        0 0 20px 8px rgba(170, 90, 255, 0.35),
+        0 0 45px 18px rgba(130, 65, 255, 0.25);
+    filter: blur(15px);
+    opacity: 0.8;
+    pointer-events: none;
+    animation: letterAuraPulse 4s ease-in-out infinite;
+}
+
+@keyframes letterAuraPulse {
+    0%, 100% {
+        opacity: 0.45;
+        transform: scale(0.97);
+    }
+
+    50% {
+        opacity: 0.9;
+        transform: scale(1.04);
+    }
+}
+
+#message-paper-screen:not(.hidden) .message-paper > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Floating stardust around the letter */
+#message-paper-screen:not(.hidden)::after {
+    content:
+        "·      ✦           ·       ✧       ·\A"
+        "    ✧       ·           ✦       ·\A"
+        "✦       ·       ✧          ·       ✦\A"
+        "    ·          ✦       ·          ✧\A"
+        "✧       ·           ·       ✦       ·\A"
+        "    ✦       ·          ✧       ·";
+
+    position: fixed;
+    inset: 0;
+    box-sizing: border-box;
+    padding: 3vh 3vw;
+    white-space: pre;
+    overflow: hidden;
+    text-align: left;
+
+    color: #dfbdff;
+    font-size: 13px;
+    line-height: 15vh;
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 0 5px rgba(210, 160, 255, 1),
+        0 0 12px rgba(160, 90, 255, 0.8);
+
+    pointer-events: none;
+    z-index: 10;
+
+    animation: stardustTwinkle 4s ease-in-out infinite;
+}
+
+@keyframes stardustTwinkle {
+    0%, 100% {
+        opacity: 0.25;
+        transform: scale(0.98);
+    }
+
+    50% {
+        opacity: 0.85;
+        transform: scale(1.02);
+    }
+}
+
+/* Slow-moving galaxy atmosphere */
+#message-paper-screen:not(.hidden) {
+    background-image:
+        radial-gradient(
+            circle at 15% 25%,
+            rgba(153, 91, 255, 0.14),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(99, 65, 210, 0.16),
+            transparent 40%
+        );
+    background-size: 200% 200%;
+    animation: galaxyAtmosphere 18s ease-in-out infinite alternate;
+}
+
+@keyframes galaxyAtmosphere {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Magical return button */
+#back-to-universe-button {
+    animation: returnButtonGlow 4s ease-in-out infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes returnButtonGlow {
+    0%, 100% {
+        box-shadow: 0 0 8px rgba(170, 110, 255, 0.15);
+    }
+
+    50% {
+        box-shadow:
+            0 0 16px rgba(190, 130, 255, 0.45),
+            0 0 28px rgba(150, 80, 255, 0.2);
+    }
+}
+
+#back-to-universe-button:hover {
+    transform: scale(1.04);
+}
+
+/* Final cinematic secret-screen exit */
+#secret-screen.secret-fade-out {
+    animation: secretExitCinematic 3s ease-in-out forwards !important;
+    pointer-events: none;
+    z-index: 20;
+}
+
+@keyframes secretExitCinematic {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+
+    60% {
+        opacity: 0.65;
+        transform: scale(0.98);
+        filter: blur(2px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.94);
+        filter: blur(8px);
+    }
+}
+
+.fix-button-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.fix-button-visible {
+    animation: fixButtonAppear 0.8s ease forwards;
+}
+
+@keyframes fixButtonAppear {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Center the secret message signature */
+#secret-screen .secret-signature {
+    display: block;
+    width: 100%;
+    text-align: right;
+    margin-left: auto;
+    margin-right: auto;
+}
